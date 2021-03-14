@@ -12,7 +12,7 @@ class List extends React.Component {
     title: PropTypes.node.isRequired,
     description: PropTypes.node,
     columns: PropTypes.array,
-    image: PropTypes.node,
+    image: PropTypes.string,
     addColumn: PropTypes.func,
   }
 
