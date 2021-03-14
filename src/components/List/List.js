@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './List.scss';
-import Hero from '../Hero/Hero.js';
-import PropTypes from 'prop-types';
-import Column from '../Column/ColumnContainer.js';
 import {settings} from '../../data/dataStore';
+import PropTypes from 'prop-types';
 import ReactHtmlParser from 'react-html-parser';
-// import Creator from '../Creator/Creator.js';
+import Column from '../Column/ColumnContainer.js';
+import Creator from '../Creator/Creator.js';
+import Hero from '../Hero/Hero.js';
 
 class List extends React.Component {
   static propTypes = {
@@ -13,6 +13,7 @@ class List extends React.Component {
     description: PropTypes.node,
     columns: PropTypes.array,
     image: PropTypes.node,
+    addColumn: PropTypes.func,
   }
 
   static defaultProps = {
@@ -20,7 +21,7 @@ class List extends React.Component {
   }
 
   render() {
-    const {title, columns, image, description} = this.props;
+    const {title, columns, image, description, addColumn} = this.props;
 
     return (
       <section className={styles.component}>
@@ -33,11 +34,9 @@ class List extends React.Component {
             <Column key={columnData.id} {...columnData} />
           ))}
         </div>
-        {/*
         <div className={styles.creator}>
-          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+          <Creator text={settings.columnCreatorText} action={addColumn}/>
         </div>
-        */}
       </section>
     );
   }
