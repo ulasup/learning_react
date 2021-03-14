@@ -2,14 +2,19 @@ import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
 
-const Column = props => (
-    <section  className={styles.component}>
-        <h3 className={styles.title}>{props.title}</h3>
-    </section>
-);
 
-Column.propTypes = {
-    title: PropTypes.node.isRequired,
-};
+class Column extends React.Component {
+    static propTypes = {
+      title: PropTypes.node.isRequired,
+    }
 
-export default Column;
+    render() {
+      return (
+        <section className={styles.component}>
+            <h3 className={styles.title}>{this.props.title}</h3>
+        </section>
+      )
+    }
+  }
+
+  export default Column;
