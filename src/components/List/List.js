@@ -6,6 +6,7 @@ import ReactHtmlParser from 'react-html-parser';
 import Column from '../Column/ColumnContainer.js';
 import Creator from '../Creator/Creator.js';
 import Hero from '../Hero/Hero.js';
+import Container from '../Container/Container.js';
 
 class List extends React.Component {
   static propTypes = {
@@ -37,6 +38,7 @@ class List extends React.Component {
         <div className={styles.creator}>
           <Creator text={settings.columnCreatorText} action={addColumn}/>
         </div>
+        <Container />
       </section>
     );
   }
